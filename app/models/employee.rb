@@ -8,4 +8,6 @@ class Employee < ApplicationRecord
   validates :department, exclusion: { in: [nil] }
   validates :payment, numericality: true, exclusion: { in: [nil] }
   validates :note, exclusion: { in: [nil] }
+
+  permit_params :name, :department, :gender, :birth, :joined_date, :payment, :note
 end
